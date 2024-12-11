@@ -19,7 +19,8 @@
         //-- Define Light Property Vectors.
         float lightAmb[] = { 0.3, 0.3, 0.3, 1.0 };
         float lightDifAndSpec[] = { 1.0, 1.0, 1.0, 1.0 };
-        float lightPos[] = { 0.0, 7.0, 3.0, 0.0 };
+        float lightPos[] = { 0.0, 7.0, 3.0, 1.0 };
+        // float lightPos[] = { angle_x, angle_y, angle_z, 1.0 };
         float globAmb[] = { 0.2, 0.2, 0.2, 1.0 };
         //-- Set Material Properties of the Objects
         glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, matSpec);
@@ -67,6 +68,16 @@
         logger(SYN_YELLOW "J :" RESET " X-Axis Rotation (-)");
         logger(SYN_YELLOW "O :" RESET " Z-Axis Rotation (+)");
         logger(SYN_YELLOW "U :" RESET " Z-Axis Rotation (-)");
+        logger(GREEN "! :" RESET " Planet Earth");
+        logger(GREEN "@ :" RESET " Planet Earth in Night");
+        logger(GREEN "# :" RESET " Planet Mars");
+        logger(GREEN "$ :" RESET " Planet Jupiter");
+        logger(GREEN "% :" RESET " Planet Saturn");
+        logger(GREEN "^ :" RESET " Planet Moon");
+        logger(GREEN "* :" RESET " Sun");
+        logger(GREEN "( :" RESET " Exoplanet 1");
+        logger(GREEN ") :" RESET " Exoplanet 2");
+        logger(GREEN "_ :" RESET " Exoplanet 3");
     }
     /**
      * @brief Method to Check Keyboard
@@ -170,6 +181,61 @@
         if (window.keyboard.key == SDLK_u) {
             angle_z -= RK_WORLD_MODEL_ANGLE_INCREMENT_Z;
             logger(SYN_LOG "Z-Axis Rotation Decremented" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Earth
+        if (window.keyboard.key == SDLK_z) {
+            texture = RK_WORLD_MODEL_TEXTURE_EARTH_2;
+            logger(SYN_LOG "Selected" DARK_CYAN " Earth" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Earth in Night
+        if (window.keyboard.key == SDLK_x) {
+            texture = RK_WORLD_MODEL_TEXTURE_EARTH_NIGHT;
+            logger(SYN_LOG "Selected" DARK_CYAN " Earth in Night" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Mars
+        if (window.keyboard.key == SDLK_c) {
+            texture = RK_WORLD_MODEL_TEXTURE_MARS;
+            logger(SYN_LOG "Selected" DARK_CYAN " Mars" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Jupiter
+        if (window.keyboard.key == SDLK_v) {
+            texture = RK_WORLD_MODEL_TEXTURE_JUPITER;
+            logger(SYN_LOG "Selected" DARK_CYAN " Jupiter" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Saturn
+        if (window.keyboard.key == SDLK_b) {
+            texture = RK_WORLD_MODEL_TEXTURE_SATURN;
+            logger(SYN_LOG "Selected" DARK_CYAN " Saturn" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Pluto
+        if (window.keyboard.key == SDLK_n) {
+            texture = RK_WORLD_MODEL_TEXTURE_PLUTO;
+            logger(SYN_LOG "Selected" DARK_CYAN " Pluto" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Moon
+        if (window.keyboard.key == SDLK_m) {
+            texture = RK_WORLD_MODEL_TEXTURE_MOON;
+            logger(SYN_LOG "Selected" DARK_CYAN " Moon" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Sun
+        if (window.keyboard.key == SDLK_s) {
+            texture = RK_WORLD_MODEL_TEXTURE_STAR_1;
+            logger(SYN_LOG "Selected" DARK_CYAN " Sun" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Exoplanet 1
+        if (window.keyboard.key == SDLK_d) {
+            texture = RK_WORLD_MODEL_TEXTURE_EXOPLANET_1;
+            logger(SYN_LOG "Selected" DARK_CYAN " Exoplanet 1" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Exoplanet 2
+        if (window.keyboard.key == SDLK_f) {
+            texture = RK_WORLD_MODEL_TEXTURE_EXOPLANET_2;
+            logger(SYN_LOG "Selected" DARK_CYAN " Exoplanet 2" RESET);
+        }
+        //-- Check Keyboard Inputs for Texture Exoplanet 3
+        if (window.keyboard.key == SDLK_g) {
+            texture = RK_WORLD_MODEL_TEXTURE_EXOPLANET_3;
+            logger(SYN_LOG "Selected" DARK_CYAN " Exoplanet 3" RESET);
         }
     }
     /**
